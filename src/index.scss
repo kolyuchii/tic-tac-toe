@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.grid {
+  width: 600px;
+  margin: 0 auto;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  position: relative;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+  }
+  &__cell {
+    text-align: center;
+    flex: 1 0 auto;
+    height: auto;
+    align-items: center;
+    border-right: 1px solid;
+    transition: background-color 0.2s, background-image 0.5s;
+    cursor: pointer;
+    background-size: 100%;
+
+    &.is-selected {
+      cursor: default;
+    }
+
+    &.type-x {
+      background-image: url("./images/x-mark-512.png");
+    }
+
+    &.type-o {
+      background-image: url("./images/circle-outline-512.png");
+    }
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    &:before {
+      content: '';
+      float: left;
+      padding-top: 100%;
+    }
+  }
+
+  &__result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 1px;
+    bottom: 1px;
+    background-color: #fff;
+    opacity: 0.9;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_restart {
+      cursor: pointer;
+      color: #2667B6;
+      font-size: 20px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.controls {
+  text-align: center;
+  margin: 10px 0 20px;
+  &__button {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
