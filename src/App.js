@@ -37,6 +37,9 @@ function App() {
       return false;
     }
     const { cell, row } = event.currentTarget.dataset;
+    if (matrix[row][cell] !== null) {
+      return false;
+    }
     matrix[row][cell] = currentCellType;
     setCurrentCellType(
       currentCellType === CELL_TYPES.TYPE_X
